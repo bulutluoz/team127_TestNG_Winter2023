@@ -38,20 +38,19 @@ public class ReusableMethods {
         }
     }
 
-    public static WebDriver titleIleSayfaDegistir(WebDriver driver , String hedefSayfaTitle){
+    public static void titleIleSayfaDegistir(String hedefSayfaTitle){
 
-        Set<String> tumWhdSeti = driver.getWindowHandles();
+        Set<String> tumWhdSeti = Driver.getDriver().getWindowHandles();
 
         for (String each : tumWhdSeti
              ) {
 
-            String eachTitle = driver.switchTo().window(each).getTitle();
+            String eachTitle = Driver.getDriver().switchTo().window(each).getTitle();
             if (eachTitle.equals(hedefSayfaTitle)){
-                return driver;
+                break;
             }
         }
 
-        return driver;
     }
 
     public static String ilkSayfaWhdIleIkinciSayfaWhdBul(WebDriver driver, String ilkSayfaWhd) {
