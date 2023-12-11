@@ -39,4 +39,6 @@ public class TestOtomasyonuPage {
     @FindBy(xpath = "//span[text()='Logout']")
     public WebElement logoutLinki;
 
+
+
 }
